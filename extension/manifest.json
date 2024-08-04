@@ -1,0 +1,14 @@
+{
+    "name": "RecipeSnipper",
+    "version": "1.0.0",
+    "description": "Simple extract of recipe from a website",
+    "manifest_version": 3,
+    "permissions":["tabs","scripting","site"],
+    "host_permissions":["http://*/",
+                        "https://*/"],
+    "author": "Tristan Tew",
+    "action":{
+        "default_popup": "popup.html",
+        "default_title": "RecipeSnipper"
+    }
+}
