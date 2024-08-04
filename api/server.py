@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Request
 import logging
-from recipe_extractor import grab_recipe_from_url, grab_recipe_from_text
+from api.recipe_extractor import grab_recipe_from_url, grab_recipe_from_text
 from pydantic import BaseModel
 
 app = FastAPI(swagger_ui_parameters={"syntaxHighlight": False},
