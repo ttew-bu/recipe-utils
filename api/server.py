@@ -6,6 +6,7 @@ from pydantic import BaseModel
 app = FastAPI(swagger_ui_parameters={"syntaxHighlight": False},
               debug=True,
               )
+
 log = logging.getLogger()
 
 
