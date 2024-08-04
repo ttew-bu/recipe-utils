@@ -4,7 +4,8 @@ from recipe_extractor import grab_recipe_from_url, grab_recipe_from_text
 from pydantic import BaseModel
 
 app = FastAPI(swagger_ui_parameters={"syntaxHighlight": False},
-              debug=True)
+              debug=True,
+              )
 log = logging.getLogger()
 
 
@@ -14,6 +15,10 @@ class URL(BaseModel):
 class SiteText(BaseModel):
     text : str
     url : str
+
+@app.get("/")
+def read_root():
+    return {"200": "Welcome to Heroku"}
 
 @app.post("/extract_from_url/")
 async def extract_content_from_url(url: URL):
