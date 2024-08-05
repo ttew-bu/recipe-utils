@@ -2,7 +2,7 @@
 var recipeResponse
 var siteText
 var currentURL
-var APIUrl = 'https://recipe-utils-backend-a71a41b1d265.herokuapp.com/'
+var APIUrl = 'http://127.0.0.1:8000/' // http://127.0.0.1:8000/ should be default
 document.getElementById("current_status").innerText = 'Waiting for Text to Load'
 document.getElementById("downloadButton").disabled = true
 document.getElementById("copyButton").disabled = true
