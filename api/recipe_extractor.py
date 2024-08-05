@@ -36,6 +36,7 @@ def recipe_to_oai_response(visible_site_text:str)->dict:
     try:
         client = OpenAI()
         completion = client.chat.completions.create(
+        temperature=0,
         model="gpt-3.5-turbo",
         response_format={ "type": "json_object" },
         messages=[
