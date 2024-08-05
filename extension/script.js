@@ -38,6 +38,10 @@ async function  snipRecipe() {
     text: siteText
   }));
 
+  // add interim text so users know it's not just frozen during rew seconds of processing
+  document.getElementById("current_status").innerText = 'Recipe Extraction In Progress'
+
+
   const requestParams = {
     method: 'POST',
     headers: {
