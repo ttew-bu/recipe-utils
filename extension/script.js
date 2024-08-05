@@ -2,8 +2,11 @@
 var recipeResponse
 var siteText
 var currentURL
-var APIUrl = 'http://127.0.0.1:8000/'
+var APIUrl = 'https://recipe-utils-backend-a71a41b1d265.herokuapp.com/'
 document.getElementById("current_status").innerText = 'Waiting for Text to Load'
+document.getElementById("downloadButton").disabled = True
+document.getElementById("copyButton").disabled = True
+
 
 async function getCurrentTabUrl () {
   console.log("Executing getCurrentTabUrl");
@@ -48,7 +51,7 @@ async function  snipRecipe() {
 
 
   // Fetch from endpoint assigned
-  await fetch(APIUrl+"/extract_from_text/", requestParams).then(async (response) => {
+  await fetch(APIUrl+"extract_from_text/", requestParams).then(async (response) => {
     const data = await response.json();
     console.log(data)
 
@@ -58,6 +61,8 @@ async function  snipRecipe() {
     // offer differing text based on the response
     if (data.has_recipe){
     document.getElementById("current_status").innerText = 'Grab Complete, Recipe Found!'  
+    document.getElementById("downloadButton").disabled = False
+    document.getElementById("copyButton").disabled = False
     }
 
     else {
@@ -79,6 +84,9 @@ function downloadRecipe() {
 }
 
 
+function copyRecipe() {
+  navigator.clipboard.writeText(recipeResponse)
+}
 // need to put these on listeners for page load, refresh, etc.
 
 getCurrentTabUrl()
@@ -89,3 +97,6 @@ document.getElementById("snipButton").addEventListener("click", snipRecipe);
 
 // this function will generate the json object on click
 document.getElementById("downloadButton").addEventListener("click", downloadRecipe);
+
+// this function will generate the json object on click
+document.getElementById("copyButton").addEventListener("click", copyRecipe);
