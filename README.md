@@ -14,9 +14,7 @@ The hope here is to allow folks to collect recipes and build their own personal 
 - OPENAI_API_TOKEN environment variable (can be set in .env file, bash_profile, or similar), set this before spinning up API locally
 
 ### Running the API Locally
-- The actual browser extension runs off of a hosted API for all requests, but if you're testing locally, run the following command: 
-<br>
-sh run_server.sh
+- The actual browser extension runs off of a hosted API for all requests, but if you're testing locally, run the "run_server.sh" script or use the Python command from inside; note that you'll need your OPENAI_API_TOKEN set and correct virtualenv/dependencies set.
 
 ### Running the Extension Locally
 - Open up Chrome, click on the puzzle piece for extension managemetn, and then click into manage extensions
@@ -33,12 +31,15 @@ sh run_server.sh
 
 ### How to use the extension
 - Open up a website with a recipe
-<img src="screenshots/first_frame.png">
+<img src="screenshots/first_frame.png"> 
+
 - Click the "Snip Recipe" button and wait for loading to finish
 <img src="screenshots/loading.png">
+
 - After a few seconds a "Recipe found" or "No recipe found message will show up"
     - If you found a recipe, the response will indicate that (likewise, you will get an error here if not)
     <img src="screenshots/success.png">
+
     - Click the download button (or copy to clipboard) for a formatted JSON file of the recipe, you'll get content like this
     <img src="screenshots/output.png">
 
