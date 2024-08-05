@@ -24,7 +24,20 @@ sh run_server.sh
 - In the file selector, click the extension folder (which should have the manifest, popup.html, and script.js)
 - You should now be able to trigger
 
+### How does this work?
+- A good number of websites use Yoast SEO's recipe template, which is more or less standardized, but not all sites use them
+    - It'd turn out that they are not always used and when they are used, sometimes they are incorrectly configured.
+- To get a more generalizable outcome, the API uses GPT 3.5-turbo with low temperature to perform extraction over the observed site text
+    - As it would turn out, GPT is pretty good at creating structured data for this particular use case and this gives us a (somewhat) deterministic way to approach the problem.
+
+### How to use the extension
+- Open up a website with a recipe
+- Click the "Snip Recipe" button
+- After a few seconds a "Recipe found" or "No recipe found message will show up"
+    - If you found a recipe, click the download button (or copy to clipboard) for a formatted JSON file of the recipe
+    - If you did not find a recipe, try again (or try a different site)
 
 ### Future Work
 - The intent is to publish the extension on the Chrome store and have that run against the back end in Heroku allowing for anyone to use this
+- Diverse 
 - The addition of user management and persistent storage of recipes are future considerations as well
