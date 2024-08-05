@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Simple extract of recipe from a website",
     "manifest_version": 3,
-    "permissions":["tabs","scripting","site"],
+    "permissions":["tabs","scripting","site","clipboardWrite"],
     "host_permissions":["http://*/",
                         "https://*/"],
     "author": "Tristan Tew",
