@@ -1,14 +1,15 @@
 from fastapi import FastAPI, Request
+from fastapi.logger import logger
 import logging
 from api.recipe_extractor import grab_recipe_from_url, grab_recipe_from_text
 from pydantic import BaseModel
 
+gunicorn_logger = logging.getLogger('gunicorn.error')
+logger.handlers = gunicorn_logger.handlers
+
 app = FastAPI(swagger_ui_parameters={"syntaxHighlight": False},
               debug=True,
               )
-
-log = logging.getLogger()
-
 
 class URL(BaseModel):
     url : str
@@ -25,9 +26,9 @@ async def display_welcome_message():
 async def extract_content_from_url(url: URL):
     """API Wrapper that pulls in supplied URL and 
     returns the server response for grab_recipe"""
-    log.info(f"Attempting API call for: {url.url}")
+    logger.info(f"Attempting API call for: {url.url}")
     response = grab_recipe_from_url(url.url)
-    log.info("API call complete")
+    logger.info("API call complete")
     
     return response
 
@@ -36,8 +37,8 @@ async def extract_content_from_url(url: URL):
 async def extract_content_from_text(site_text: SiteText):
     """API Wrapper that pulls in text extracted from the live website, passes data onto server,
     returns the server response for grab_recipe"""
-    log.info(f"Attempting API call for given site text")
+    logger.info(f"Attempting API call for given site text")
     response = grab_recipe_from_text(site_text.text, site_text.url)
-    log.info("API call complete")
+    logger.info("API call complete")
     
     return response
