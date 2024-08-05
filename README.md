@@ -39,5 +39,4 @@ sh run_server.sh
 
 ### Future Work
 - The intent is to publish the extension on the Chrome store and have that run against the back end in Heroku allowing for anyone to use this
-- Diverse 
-- The addition of user management and persistent storage of recipes are future considerations as well
+- The addition of user management and persistent storage of recipes are future considerations as well (i.e. build your own library of snips)

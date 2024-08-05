@@ -88,9 +88,8 @@ function copyRecipe() {
   navigator.clipboard.writeText(recipeResponse)
 }
 // need to put these on listeners for page load, refresh, etc.
-
-getCurrentTabUrl()
-getCurrentTabText()
+document.addEventListener("DOMContentLoaded", getCurrentTabUrl);
+document.addEventListener("DOMContentLoaded", getCurrentTabText);
 
 // this function will generate the json object on click
 document.getElementById("snipButton").addEventListener("click", snipRecipe);
