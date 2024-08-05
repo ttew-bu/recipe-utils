@@ -14,7 +14,8 @@ The hope here is to allow folks to collect recipes and build their own personal 
 - OPENAI_API_TOKEN environment variable (can be set in .env file, bash_profile, or similar), set this before spinning up API locally
 
 ### Running the API Locally
-- The actual browser extension runs off of a hosted API for all requests, but if you're testing locally, do the following:
+- The actual browser extension runs off of a hosted API for all requests, but if you're testing locally, run the following command: 
+<br>
 sh run_server.sh
 
 ### Running the Extension Locally
@@ -32,10 +33,14 @@ sh run_server.sh
 
 ### How to use the extension
 - Open up a website with a recipe
-- Click the "Snip Recipe" button
+<img src="screenshots/first_frame.png">
+- Click the "Snip Recipe" button and wait for loading to finish
+<img src="screenshots/loading.png">
 - After a few seconds a "Recipe found" or "No recipe found message will show up"
-    - If you found a recipe, click the download button (or copy to clipboard) for a formatted JSON file of the recipe
-    - If you did not find a recipe, try again (or try a different site)
+    - If you found a recipe, the response will indicate that (likewise, you will get an error here if not)
+    <img src="screenshots/success.png">
+    - Click the download button (or copy to clipboard) for a formatted JSON file of the recipe, you'll get content like this
+    <img src="screenshots/output.png">
 
 ### Future Work
 - The intent is to publish the extension on the Chrome store and have that run against the back end in Heroku allowing for anyone to use this
