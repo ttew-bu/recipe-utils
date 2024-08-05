@@ -4,8 +4,8 @@ var siteText
 var currentURL
 var APIUrl = 'https://recipe-utils-backend-a71a41b1d265.herokuapp.com/'
 document.getElementById("current_status").innerText = 'Waiting for Text to Load'
-document.getElementById("downloadButton").disabled = True
-document.getElementById("copyButton").disabled = True
+document.getElementById("downloadButton").disabled = true
+document.getElementById("copyButton").disabled = true
 
 
 async function getCurrentTabUrl () {
@@ -50,7 +50,7 @@ async function  snipRecipe() {
   };
 
 
-  // Fetch from endpoint assigned
+  // Fetch from endpoint assignedtru
   await fetch(APIUrl+"extract_from_text/", requestParams).then(async (response) => {
     const data = await response.json();
     console.log(data)
@@ -61,8 +61,8 @@ async function  snipRecipe() {
     // offer differing text based on the response
     if (data.has_recipe){
     document.getElementById("current_status").innerText = 'Grab Complete, Recipe Found!'  
-    document.getElementById("downloadButton").disabled = False
-    document.getElementById("copyButton").disabled = False
+    document.getElementById("downloadButton").disabled = false
+    document.getElementById("copyButton").disabled = false
     }
 
     else {
