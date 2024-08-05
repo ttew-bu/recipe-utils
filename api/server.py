@@ -18,8 +18,8 @@ class SiteText(BaseModel):
     url : str
 
 @app.get("/")
-def read_root():
-    return {"200": "Welcome to Heroku"}
+async def display_welcome_message():
+    return "RecipeSnipper"
 
 @app.post("/extract_from_url/")
 async def extract_content_from_url(url: URL):
