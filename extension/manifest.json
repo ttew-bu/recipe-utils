@@ -1,12 +1,12 @@
 {
     "name": "RecipeSnipper",
     "version": "1.0.0",
-    "description": "Simple extract of recipe from a website",
+    "description": "Simple extraction of recipe from a website direct to your clipboard or downloads the recipe into a plain text file for easy sharing",
     "manifest_version": 3,
     "permissions":["tabs","scripting","site","clipboardWrite"],
     "host_permissions":["http://*/",
                         "https://*/"],
-    "author": "Tristan Tew",
+    "author": "tristanhltew.dev@gmail.com",
     "action":{
         "default_popup": "popup.html",
         "default_title": "RecipeSnipper"

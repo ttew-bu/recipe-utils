@@ -7,7 +7,7 @@ As for why I've built this service, I've run into issues with accessibility and 
 
 Since I assume that others run into similar issues, I wanted to create a tool that I'd use to store recipes of interest in a way others may also benefit.
 
-The hope here is to allow folks to collect recipes and build their own personal repositories without needing to save links that may or may not persist over time or deal with the other accessibility challenges described above.
+The hope here is to allow folks to collect recipes, share content easily over text/email, and build their own personal repositories without needing to save links that may or may not persist over time or deal with the other accessibility challenges described above.
 
 ### Requirements
 - Python 3.12 and libraries contained within requirements.txt
@@ -27,7 +27,7 @@ The hope here is to allow folks to collect recipes and build their own personal 
 - A good number of websites use Yoast SEO's recipe template, which is more or less standardized, but not all sites use them
     - It'd turn out that they are not always used and when they are used, sometimes they are incorrectly configured.
 - To get a more generalizable outcome, the API uses GPT 3.5-turbo with low temperature to perform extraction over the observed site text
-    - As it would turn out, GPT is pretty good at creating structured data for this particular use case and this gives us a (somewhat) deterministic way to approach the problem.
+    - As it would turn out, GPT is pretty good at creating structured data for this particular use case and this gives us a (somewhat) stable way to approach the problem when we may be dealing with websites using different HTML setups
 
 ### How to use the extension
 - Open up a website with a recipe
@@ -40,9 +40,5 @@ The hope here is to allow folks to collect recipes and build their own personal 
     - If you found a recipe, the response will indicate that (likewise, you will get an error here if not)
     <img src="screenshots/success.png">
 
-    - Click the download button (or copy to clipboard) for a formatted JSON file of the recipe, you'll get content like this
+    - Click the download button (or copy to clipboard) for a formatted .txt file of the recipe, you'll get content like this
     <img src="screenshots/output.png">
-
-### Future Work
-- The intent is to publish the extension on the Chrome store and have that run against the back end in Heroku allowing for anyone to use this
-- The addition of user management and persistent storage of recipes are future considerations as well (i.e. build your own library of snips)
