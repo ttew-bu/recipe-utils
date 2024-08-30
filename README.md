@@ -9,19 +9,13 @@ Since I assume that others run into similar issues, I wanted to create a tool th
 
 The hope here is to allow folks to collect recipes, share content easily over text/email, and build their own personal repositories without needing to save links that may or may not persist over time or deal with the other accessibility challenges described above.
 
-### Requirements
-- Python 3.12 and libraries contained within requirements.txt
-- OPENAI_API_TOKEN environment variable (can be set in .env file, bash_profile, or similar), set this before spinning up API locally
-
-### Running the API Locally
-- The actual browser extension runs off of a hosted API for all requests, but if you're testing locally, run the "run_server.sh" script or use the Python command from inside; note that you'll need your OPENAI_API_TOKEN set and correct virtualenv/dependencies set.
-
-### Running the Extension Locally
+### Running the Extension via Local Installation
 - Open up Chrome, click on the puzzle piece for extension managemetn, and then click into manage extensions
 - Switch the slider for dev mode to on
 - Click "load unpacked"
 - In the file selector, click the extension folder (which should have the manifest, popup.html, and script.js)
-- You should now be able to trigger
+- You should now be able to see RecipeSnipper on your extensions menu
+- I intend to publish this to the Chrome store to ease installation, but because it scrapes page content I must write a privacy policy before publishing.
 
 ### How does this work?
 - A good number of websites use Yoast SEO's recipe template, which is more or less standardized, but not all sites use them
@@ -42,3 +36,11 @@ The hope here is to allow folks to collect recipes, share content easily over te
 
     - Click the download button (or copy to clipboard) for a formatted .txt file of the recipe, you'll get content like this
     <img src="screenshots/output.png">
+
+### Requirements to Run API Locally
+- Python 3.12 and libraries contained within requirements.txt
+- OPENAI_API_TOKEN environment variable (can be set in .env file, bash_profile, or similar), set this before spinning up API locally
+
+### Running the API Locally
+- The actual browser extension runs off of a hosted API for all requests, but if you're testing locally, run the "run_server.sh" script or use the Python command from inside; note that you'll need your OPENAI_API_TOKEN set and correct virtualenv/dependencies set.
+  
