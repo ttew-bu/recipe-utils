@@ -33,7 +33,7 @@ siteText = result;
 
 //convert lists in the JSON response to newline delimited string, use ** as our bulleting for lists
 function cleanListComponent(listObject) {
-  return '**' + listObject.join('\n**')
+  return '** ' + listObject.join('\n** ')
 }
 
 async function  snipRecipe() {

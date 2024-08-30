@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Simple extraction of recipe from a website direct to your clipboard or downloads the recipe into a plain text file for easy sharing",
     "manifest_version": 3,
-    "permissions":["tabs","scripting","site","clipboardWrite"],
+    "permissions":["tabs","scripting","clipboardWrite"],
     "host_permissions":["http://*/",
                         "https://*/"],
     "author": "tristanhltew.dev@gmail.com",
