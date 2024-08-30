@@ -15,7 +15,7 @@ The hope here is to allow folks to collect recipes, share content easily over te
 - Click "load unpacked"
 - In the file selector, click the extension folder (which should have the manifest, popup.html, and script.js)
 - You should now be able to see RecipeSnipper on your extensions menu
-- I intend to publish this to the Chrome store to ease installation, but because it scrapes page content I must write a privacy policy before publishing.
+- I intend to publish this to the Chrome store to ease installation, but because it scrapes page content I must write a privacy policy before publishing; there are several hoops to jump through there.
 
 ### How does this work?
 - A good number of websites use Yoast SEO's recipe template, which is more or less standardized, but not all sites use them
